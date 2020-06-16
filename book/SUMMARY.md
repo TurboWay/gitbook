@@ -10,7 +10,7 @@
   * [impala](doc/bigdata/impala.md)
   * [kafka](doc/bigdata/kafka.md)  
   * [hbase](doc/bigdata/hbase.md)  
-  * [spark](doc/bigdata/flume.md)
+  * [spark](doc/bigdata/spark.md)
   * [flink](doc/bigdata/flink.md)
   * [flume](doc/bigdata/flume.md)
   * [elasticsearch](doc/bigdata/elasticsearch.md)
