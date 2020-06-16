@@ -1,0 +1,35 @@
+{
+    "title": "Way's Book",
+    "author": "Way",
+    "description": "Way的私人笔记",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "styles": {
+        "website": "./styles/website.css"
+    },
+    "structure": {
+        "readme": "README.md"
+    },
+    "links": {
+        "sidebar": {
+            "GitHub": "https://github.com/TurboWay",
+            "博客园": "https://www.cnblogs.com/TurboWay"
+        }
+    },
+    "plugins": [
+        "-sharing",
+        "-lunr", 
+        "-search", 
+        "search-pro",
+        "splitter",
+        "chapter-fold",
+        "anchors",
+        "anchor-navigation-ex",
+        "accordion"
+    ],
+    "pluginsConfig": {
+        "anchor-navigation-ex": {
+            "showLevel": false
+        }
+    }
+}
