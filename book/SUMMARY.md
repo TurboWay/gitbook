@@ -1,15 +1,25 @@
 # 目录
 
 * [前言](README.md)
-
 * [大数据](doc/大数据.md)
-  * [hive](doc/hive.md)
-  * [flink](doc/flink安装笔记.md)
-  * [elasticsearch](doc/elasticsearch.md)
-* [linux常用命令](doc/linux常用命令.md)
-* [vpn服务搭建](doc/vpn.md)
+  * [cdh](doc/bigdata/cdh.md)
+  * [cdh添加节点](doc/bigdata/cdh添加节点.md)
+  * [hdfs](doc/bigdata/hdfs.md)
+  * [yarn](doc/bigdata/yarn.md)
+  * [hive](doc/bigdata/hive.md)
+  * [impala](doc/bigdata/impala.md)
+  * [kafka](doc/bigdata/kafka.md)  
+  * [hbase](doc/bigdata/hbase.md)  
+  * [spark](doc/bigdata/flume.md)
+  * [flink](doc/bigdata/flink.md)
+  * [flume](doc/bigdata/flume.md)
+  * [elasticsearch](doc/bigdata/elasticsearch.md)
+  * [python3 操作大数据](https://github.com/TurboWay/pybigdata)
 * [ETL](doc/etl.md)
 * [docker](doc/docker.md)
 * [git](doc/git.md)
+* [linux 常用命令](doc/linux常用命令.md)
+* [vpn 服务搭建](doc/vpn.md)
+* [负载均衡](doc/负载均衡.md)
 
 
