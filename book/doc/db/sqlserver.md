@@ -454,6 +454,53 @@ FROM    sys.dm_exec_requests AS R
 | 索引缺失   | 增加索引 | 新增   |
 | 索引碎片   | 索引维护 | 重建、重组索引 |
 
+```sql
+/*创建索引*/
+
+--创建主键
+CREATE TABLE Skills (
+   SkillID INTEGER NOT NULL,
+   SkillName CHAR( 20 ) NOT NULL,
+   SkillType CHAR( 20 ) NOT NULL,
+   PRIMARY KEY( SkillID )
+)   
+ALTER TABLE [TEST].[dbo].[Bi_code] ADD PRIMARY KEY (code)
+
+--聚集索引
+CREATE CLUSTERED INDEX PK_code ON [TEST].[dbo].[Bi_code](code)
+--非聚集索引 覆盖索引
+CREATE NONCLUSTERED INDEX PK_code2 ON [TEST].[dbo].[Bi_code](code,tbkey)
+--非聚集索引 包含索引
+CREATE NONCLUSTERED INDEX PK_code3 ON [TEST].[dbo].[Bi_code](code) INCLUDE (tbkey)
+--唯一索引
+CREATE UNIQUE NONCLUSTERED INDEX PK_code4 ON [TEST].[dbo].[Bi_code](code) 
+CREATE UNIQUE CLUSTERED INDEX PK_code5 ON [TEST].[dbo].[Bi_code](code) 
+
+/*删除索引*/
+DROP INDEX PK_code ON [TEST].[dbo].[Bi_code]
+ALTER TABLE [dbo].[Bi_code] DROP CONSTRAINT [PK__Bi_code__357D4CF84A8310C6]
+
+/*重组索引*/
+
+--指定重组
+ALTER INDEX PK_code5 ON [dbo].[Bi_code] REORGANIZE  
+--全部重组
+ALTER INDEX ALL ON [dbo].[Bi_code] REORGANIZE 
+
+/*重建索引*/
+
+--使用联机方式重建索引  
+ALTER INDEX PK_code5 ON [dbo].[Bi_code] REBUILD WITH (FILLFACTOR=80,ONLINE =ON)  
+  
+--使用脱机方式重建索引  
+ALTER INDEX PK_code5 ON [dbo].[Bi_code] REBUILD WITH (FILLFACTOR=80,ONLINE =OFF)  
+  
+--使用脱机方式重建表上所有索引  
+ALTER INDEX ALL ON [dbo].[Bi_code] REBUILD WITH (FILLFACTOR=80,ONLINE =OFF )  
+ 
+--使用DROP_EXISTING 来重建索引 
+CREATE CLUSTERED INDEX PK_code5 ON [Bi_code](code) WITH (DROP_EXISTING=ON ,FILLFACTOR=70,ONLINE=ON ) 
+```
 
 
 
