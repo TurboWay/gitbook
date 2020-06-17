@@ -10,5 +10,6 @@
 
 # 实操
 
-- <a href="/doc/cdh安装.pdf" target="_blank">cdh安装</a>
+- [cdh安装教程](http://www.mamicode.com/info-detail-2567035.html)
+- <a href="/doc/cdh安装.pdf" target="_blank">cdh安装笔记</a>
 - [cdh添加节点](/doc/bigdata/cdh添加节点.md)

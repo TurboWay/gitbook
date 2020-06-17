@@ -3,7 +3,7 @@
 # 1.docker 常用命令
 
 | 分类 | 命令                                                         | 说明                                                         |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| :--- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 镜像 | docker search mysql:5.7                                      | 搜索镜像                                                     |
 |      | docker images                                                | 查看本地下载镜像                                             |
 |      | docker pull mysql:5.7                                        | 拉取镜像                                                     |
@@ -31,6 +31,12 @@ docker run -itd --name mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 mysql:
 
  ```shell
 docker run -itd --name postgres -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
+ ```
+
+## 安装 sqlserver
+
+ ```shell
+docker run -itd -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=utopia.123"  -p 1433:1433 --name sqlserver mcr.microsoft.com/mssql/server:2017-latest
  ```
 
 ## 安装 redis
