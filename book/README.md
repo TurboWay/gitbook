@@ -17,3 +17,5 @@
 - Python 资源大全中文版 [awesome-python-cn](https://github.com/jobbole/awesome-python-cn)
 
 - Golang 入门 [learn-go-with-tests](https://studygolang.gitbook.io/learn-go-with-tests/)
+
+- Golang 入门2 [build-web-application-with-golang](https://github.com/TurboWay/build-web-application-with-golang/blob/master/zh/preface.md)
