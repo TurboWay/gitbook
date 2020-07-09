@@ -25,6 +25,7 @@
 * [git](doc/git.md)
 * [linux](doc/linux.md)
 * [vpn](doc/vpn.md)
+* [resource](doc/resource.md)
 * [负载均衡](doc/负载均衡.md)
 * [常用命令](doc/常用命令.md)
 
