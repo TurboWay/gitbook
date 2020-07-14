@@ -168,3 +168,13 @@ tar  -v 显示过程
 | cat ~/.bash_profile       | 查看用户环境变量                |
 | cat /etc/profile          | 查看系统环境变量                |
 | ln -s b a                 | 创建软链接a ，即创建b的快捷方式 |
+
+# 16、常用 shell 脚本
+
+## 循环
+
+```shell 
+for page in `seq 1 22`; do
+     python execute_spider.py -j d_zhuanli_quanguo_job -p $page -n 6;
+done
+```
