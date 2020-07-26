@@ -96,3 +96,13 @@ exit
  ```shell
 docker restart elasticsearch
  ```
+
+# 3.docker win10 环境下常见问题处理
+
+win10 环境下, 安装 docker 需要创建一个 linux 的虚拟环境, 目前有两种方式：Hyper-V 和 WSL2 ; 二者只需要启用一个即可, 其中 WSL2 的性能较好, 优先级较高.
+
+启用 Hyper-V 后, [如何修改虚拟硬盘的存放位置](https://www.cnblogs.com/TurboWay/p/12923814.html)
+
+启用 WSL2 后, [修改虚拟硬盘的存放位置](https://www.cnblogs.com/xhznl/p/13184398.html)
+
+启用 WSL2 后, [启动报错处理](https://www.cnblogs.com/MysticBoy/p/13066611.html)

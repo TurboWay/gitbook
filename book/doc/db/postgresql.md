@@ -18,6 +18,27 @@ grant all on all tables in schema public to gfecp_dev;
 # 修改表的拥有者
 alter table area owner to gfecp_dev;
 
+# 增加表默认值
+alter table area alter column colname set default 456;
+
+# 增加表默认值
+alter table area alter column colname set default 456;
+
+# 增加自增列
+CREATE SEQUENCE 表名_id_seq
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
+alter table 表名 alter column id set default nextval('表名_id_seq');
+
+# 建表设置自增列
+create table 表名(
+id serial)
+
+
 # 服务启动
 service postgresql start       # 启动
 service postgresql stop       # 停止
