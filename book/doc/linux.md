@@ -45,7 +45,8 @@
 | rz                                | 本地上传到 linux （rz -y 上传覆盖） |
 | sz                                | linux下载到本地                     |
 | scp filename root@ip:/home/root   | 服务器之间传输文件                  |
-| scp -p dirname root@ip:/home/root | 服务器之间传输文件夹                |
+| scp -p dirname root@ip:/home/root | 服务器之间传输文件（保留源文件的修改时间，访问时间和访问权限。）               |
+| scp -r dirname root@ip:/home/root | 服务器之间传输文件夹                |
 
 
 
