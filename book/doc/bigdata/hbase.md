@@ -21,6 +21,11 @@
 |truncate 'mytest' | 清空表 |
 |desc 'mytest' | 查看表 |
 |count 'mytest' | 计数 |
+|alter 'mytest' , NAME => 'cf2' | 增加列族 |
+|alter 'mytest' , { NAME=>'cf2', METHOD=>'delete' } | 删除列族 |
+|alter 'mytest', NAME => 'cf', TTL => '86400' | 设置生存期, 24小时后自动删除 |
+|alter 'mytest', NAME => 'cf', COMPRESSION  => 'snappy' | 设置为 snappy 压缩 |
+|major_compact 'mytest' | 大合并，性能消耗多 |
 
 ## 增删改查
 
