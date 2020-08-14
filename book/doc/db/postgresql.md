@@ -38,6 +38,14 @@ alter table 表名 alter column id set default nextval('表名_id_seq');
 create table 表名(
 id serial)
 
+# 查看表大小
+select pg_size_pretty(pg_relation_size('table_name'));
+
+# 查看所有表大小
+SELECT  table_schema || '.' || table_name AS table_full_name
+      , pg_size_pretty(pg_total_relation_size('"' ||table_schema || '"."' || table_name || '"')) AS size
+FROM information_schema.tables
+ORDER BY pg_total_relation_size('"' ||table_schema || '"."' || table_name || '"') DESC limit 20
 
 # 服务启动
 service postgresql start       # 启动
