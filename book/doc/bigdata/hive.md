@@ -20,7 +20,7 @@
 | drop database db_name cascade                        | 删表删库           |
 | hive -hiveconf bizdate=20180101 -f  test.hql         | 传参执行 hql 文件  |
 | ANALYZE TABLE tablename COMPUTE STATISTICS -- noscan | 更新统计信息       |
-
+| alter table tablename set FILEFORMAT orc | 修改表存储格式  |
 
 
 # 2、常用调优设置
@@ -155,22 +155,8 @@ CREATE EXTERNAL TABLE `spider.zhifang_list`(
   `bizdate` string COMMENT '业务日期',
   `ctime` string COMMENT '入库时间',
   `spider` string COMMENT '爬虫名称')
-ROW FORMAT SERDE
-   'org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe'
-STORED AS INPUTFORMAT
-   'org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat'
-OUTPUTFORMAT
-   'org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat'
-TBLPROPERTIES (
-  'COLUMN_STATS_ACCURATE'='false',
-  'last_modified_by'='getway',
-  'last_modified_time'='1583981845',
-  'numFiles'='0',
-  'numRows'='-1',
-  'orc.compress'='SNAPPY',
-  'rawDataSize'='-1',
-  'totalSize'='0',
-  'transient_lastDdlTime'='1583981845')
+STORED AS Parquet -- 或者 orc
+TBLPROPERTIES ("orc.compress"="SNAPPY");
 ```
 %/accordion%
 
@@ -190,14 +176,6 @@ STORED BY
 WITH SERDEPROPERTIES (
   'hbase.columns.mapping'=':key,cf:title,cf:bizdate,cf:loginid',
   'serialization.format'='1')
-TBLPROPERTIES (
-  'COLUMN_STATS_ACCURATE'='false',
-  'hbase.table.name'='test_turboway',
-  'numFiles'='0',
-  'numRows'='-1',
-  'rawDataSize'='-1',
-  'totalSize'='0',
-  'transient_lastDdlTime'='1543297130')
 ```
 %/accordion%
 
@@ -250,6 +228,12 @@ TBLPROPERTIES('es.resource' = 'idx_f_gf_ent_penalty_info/f_gf_ent_penalty_info',
 
 
 # 4、常用语句
+
+```sql
+-- 加载数据文件，相当于直接 put 覆盖到指定 hdfs 目录
+LOAD DATA LOCAL INPATH '/home/getway/tmp/way/data_test.txt'
+OVERWRITE  INTO TABLE spider.test_way_20200818 ;
+```
 
 ```sql
 -- 创建临时表
@@ -556,6 +540,3 @@ USING 'python3 dateformatUDF.py' AS (dt, newdt, test)
 FROM tt;
 ```
 %/accordion%
-
-
-

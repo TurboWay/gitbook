@@ -45,6 +45,12 @@ hdfs dfs -du -s -h /user/hive/warehouse/
 # 检查集群状态
 hdfs fsck /
 
+# 查看缺失块
+hdfs fsck -list-corruptfileblocks 
+
+# 删除缺失块
+hdfs fsck -delete
+
 # 重平衡
 hdfs balancer -threshold 10
 

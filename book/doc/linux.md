@@ -22,6 +22,7 @@
 
 | 命令                                 | 说明                                                         |
 | :----------------------------------- | :----------------------------------------------------------- |
+| hostname                             | 查看主机名                                                   |
 | cd                                   | 进入文件夹                                                   |
 | pwd                                  | 查看当前路径                                                 |
 | ll                                   | 逐行展示文件清单（ll -a 展示隐藏文件）                       |
@@ -68,6 +69,9 @@ tar  -v 显示过程
 | tar -zxf  work.tar.gz  -C /opt/soft | tar.gz 解压到指定路径    |
 | tar -tr  work.tar.gz                | 查看压缩包内容           |
 | tar -zxf work.tar.gz  work/xxx      | 解压压缩包里面的指定文件 |
+| gzip work.txt                       | 压缩成 work.txt.gz |
+| gunzip work.txt.gz                  | 解压成 work.txt |
+| gunzip -c work.txt.gz               | 输出内容，不解压 |
 
 
 # 6、vim技巧
@@ -125,6 +129,7 @@ tar  -v 显示过程
 | 命令                                                         | 说明                                         |
 | :----------------------------------------------------------- | :------------------------------------------- |
 | who                                                          | 查看登录用户                                 |
+| useradd xxx                                                      | 创建用户                                 |
 | passwd --stdin getway                                        | 强制修改getway用户密码，无视规则             |
 | pkill -kill -t  pts/0 （pts/0为w指令看到的用户终端号）       | 踢用户                                       |
 | last                                                         | 查看登录历史记录                             |

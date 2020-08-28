@@ -5,9 +5,9 @@
 ## 概述
 
 ETL 的英文全称是 Extract-Transform-Load 的缩写，用来描述将数据从来源迁移到目标的几个过程：
-1.Extract 数据抽取，也就是把数据从数据源读出来。
-2.Transform 数据转换，把原始数据转换成期望的格式和维度。如果用在数据仓库的场景下，Transform也包含数据清洗，清洗掉噪音数据。
-3.Load  数据加载，把处理后的数据加载到目标处，比如数据仓库。
+- 1.Extract 数据抽取，也就是把数据从数据源读出来。
+- 2.Transform 数据转换，把原始数据转换成期望的格式和维度。如果用在数据仓库的场景下，Transform也包含数据清洗，清洗掉噪音数据。
+- 3.Load 数据加载，把处理后的数据加载到目标处，比如数据仓库。
 
 ## 常用的 ETL 工具优缺点
 
@@ -95,6 +95,16 @@ python datax.py --help
 # 执行
 python ~/datax/bin/datax.py -p "-Dhost=** -Duser=root -Dpwd=utopia2020" pg2mysql.json
 ```
+
+## 调优
+
+> [一次详细的 datax 优化](https://xiaozhuanlan.com/topic/7860594132)
+
+```shell
+# 执行
+python ~/datax/bin/datax.py --jvm="-Xms4G -Xmx4G"  xxx.json
+```
+
 
 ### hdfs2pg
 
