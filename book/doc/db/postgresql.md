@@ -131,6 +131,7 @@ ORDER BY
 %accordion%批量修改表所有者%accordion%
 
 ```sql
+-- 批量修改 所有者
 DO $$
 DECLARE
     r record;
@@ -144,10 +145,10 @@ BEGIN
         SELECT 'ALTER TABLE "' || sequence_schema || '"."' || sequence_name || '" OWNER TO ' || v_new_owner || ';' AS a FROM information_schema.sequences WHERE sequence_schema = ANY (v_schema)
         UNION ALL
         SELECT 'ALTER TABLE "' || table_schema || '"."' || table_name || '" OWNER TO ' || v_new_owner || ';' AS a FROM information_schema.views WHERE table_schema = ANY (v_schema)
-        UNION ALL
-        SELECT 'ALTER FUNCTION "' || nsp.nspname || '"."' || p.proname || '"(' || pg_get_function_identity_arguments(p.oid) || ') OWNER TO ' || v_new_owner || ';' AS a FROM pg_proc p JOIN pg_namespace nsp ON p.pronamespace = nsp.oid WHERE nsp.nspname = ANY (v_schema)
-        UNION ALL
-        SELECT 'ALTER DATABASE "' || current_database() || '" OWNER TO ' || v_new_owner
+--        UNION ALL
+--        SELECT 'ALTER FUNCTION "' || nsp.nspname || '"."' || p.proname || '"(' || pg_get_function_identity_arguments(p.oid) || ') OWNER TO ' || v_new_owner || ';' AS a FROM pg_proc p JOIN pg_namespace nsp ON p.pronamespace = nsp.oid WHERE nsp.nspname = ANY (v_schema)
+--        UNION ALL
+--        SELECT 'ALTER DATABASE "' || current_database() || '" OWNER TO ' || v_new_owner
     LOOP
         EXECUTE r.a;
     END LOOP;
