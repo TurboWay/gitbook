@@ -37,6 +37,9 @@ hdfs dfs -du -s -h /user/spider/
 
 # 查看hive数据大小
 hdfs dfs -du -s -h /user/hive/warehouse/
+
+# 查看附件文件数量
+hdfs dfs -count /user/spider/
 ```
 
 ## 常用管理命令
