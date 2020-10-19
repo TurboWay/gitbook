@@ -85,7 +85,7 @@ show engines
 
 
 
-## 常用 DDL
+## 常用命令
 
 ```sql
 -- 自增列：auto_increment PRIMARY KEY（必须作为主键的一部分） 相当于 SQLSERVER 的 IDENTITY(1,1)
@@ -142,7 +142,15 @@ CREATE TABLE `weibo_get` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+## 运维命令
 
+```sql
+# 备份数据库
+mysqldump -uroot -h 127.0.0.1 -p izone > izone.sql
+
+# 还原数据库
+mysql -uroot -pPASSWORD izone < izone.sql
+```
 
 
 ## 索引、存储过程、事件

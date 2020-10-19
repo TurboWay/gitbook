@@ -86,6 +86,17 @@ order by 1
 CREATE TABLE "gfecp_dev"."tmp_t_gfecp_bigdata_pdp_apply" ( LIKE "gfecp_dev"."t_gfecp_bigdata_pdp_apply" INCLUDING DEFAULTS INCLUDING CONSTRAINTS INCLUDING INDEXES INCLUDING COMMENTS);
 ```
 
+## 运维命令
+
+```
+# 备份
+pg_dump -h 127.0.0.1 -p 5432  -U spider --format custom --blobs --verbose --file back.sql dbname
+
+# 还原
+pg_restore -h 127.0.0.1 -p 5432  -U spider --dbname dbname --verbose --clean back.sql
+```
+
+
 ## 数据字典
 
 %accordion%查询字典%accordion%
