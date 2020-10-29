@@ -174,6 +174,7 @@ tar  -v 显示过程
 | cat ~/.bash_profile       | 查看用户环境变量                |
 | cat /etc/profile          | 查看系统环境变量                |
 | ln -s b a                 | 创建软链接a ，即创建b的快捷方式 |
+| curl cip.cc               | 查看本机公网 ip                 |
 
 # 16、常用 shell 脚本
 
