@@ -61,6 +61,17 @@ set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;
 ```
 
 ```sql
+-- 设置每个 reduce 处理的数据量 默认 64 M
+set hive.exec.reducers.bytes.per.reducer = 67108864 
+
+-- 设置 reduce 个数上限
+set hive.exec.reducers.max = 20;
+
+-- 直接设置 reduce 的个数
+set mapred.reduce.tasks = 15;
+```
+
+```sql
 --设置内存缓冲区大小，很多时候可以解决内存不足问题
 set io.sort.mb=10;
 

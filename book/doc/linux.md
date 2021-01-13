@@ -185,3 +185,16 @@ for page in `seq 1 22`; do
      python execute_spider.py -j d_zhuanli_quanguo_job -p $page -n 6;
 done
 ```
+
+## 正在运行的命令转入后台运行
+
+```shell
+# 1.先暂停这条命令并返回客户端。
+CTRL+Z  
+# 2.让这条shell命令在后台执行。
+bg 
+# 3.这条命令保证当终端关闭时，Shell脚本不会被杀死。
+disown -h  
+```
+
+
