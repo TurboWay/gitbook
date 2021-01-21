@@ -241,9 +241,16 @@ TBLPROPERTIES('es.resource' = 'idx_f_gf_ent_penalty_info/f_gf_ent_penalty_info',
 # 4、常用语句
 
 ```sql
--- 加载数据文件，相当于直接 put 覆盖到指定 hdfs 目录
+-- 数据导入
 LOAD DATA LOCAL INPATH '/home/getway/tmp/way/data_test.txt'
-OVERWRITE  INTO TABLE spider.test_way_20200818 ;
+OVERWRITE INTO TABLE spider.test_way_20200818 ;
+```
+
+```sql
+-- 数据导出
+INSERT OVERWRITE LOCAL DIRECTORY '/home/getway/tmp/way' 
+ROW FORMAT DELIMITED FIELDS TERMINATED by ',' 
+select * from spider.test_way_20200818 ;  
 ```
 
 ```sql
