@@ -57,6 +57,9 @@ hdfs fsck -delete
 # 重平衡
 hdfs balancer -threshold 10
 
+# 清空回收站
+hdfs dfs -expunge
+
 # 后台运行重平衡
 nohup hdfs balancer -threshold 10 > balance.log 2>&1 &
 
