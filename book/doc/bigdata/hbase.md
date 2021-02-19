@@ -15,6 +15,7 @@
 |list_namespace  |   查看表空间   |
 |exists 'mytest' | 表是否存在 |
 |create 'mytest', 'cf' | 建表 |
+|create 'mytest', {NAME => 'cf', COMPRESSION => 'snappy'} | 建压缩表 |
 |enable 'mytest' | 启用表 |
 |disable 'mytest' | 禁用表 |
 |drop 'mytest' | 删表（需要先禁用表） |
