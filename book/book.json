@@ -25,11 +25,17 @@
         "chapter-fold",
         "anchors",
         "anchor-navigation-ex",
-        "accordion"
+        "accordion",
+        "popup",
+        "hide-element",
+        "code"
     ],
     "pluginsConfig": {
         "anchor-navigation-ex": {
             "showLevel": false
+        },
+        "hide-element": {
+            "elements": [".gitbook-link"]
         }
     }
 }

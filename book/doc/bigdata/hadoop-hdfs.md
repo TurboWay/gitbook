@@ -11,8 +11,8 @@
 | hdfs dfs -ls /user/hive/                                     | 查看列表             |
 | hdfs dfs -ls -R /user/hive/                                  | 递归查看列表         |
 | hdfs dfs -put tmp/caiwei/123.txt /user/hive/udf/ <br>hdfs dfs -copyFromLocal tmp/caiwei/123.txt /user/hive/udf/ | 上传文件             |
-| hdfs dfs -mv /user/hive/udf/123.txt   /user/hive/            | 移动文件             |      
-| hdfs dfs -cp /user/hive/udf/123.txt  /user/hive/udf/456.txt  | 复制文件             |       
+| hdfs dfs -mv /user/hive/udf/123.txt   /user/hive/            | 移动文件             |
+| hdfs dfs -cp /user/hive/udf/123.txt  /user/hive/udf/456.txt  | 复制文件             |
 | hdfs dfs -get /user/hive/udf/123.txt                         | 下载文件             |
 | hdfs dfs -getmerge /user/hive/udf/jsonunionUDF.py /user/hive/udf/file_parse.py 123.txt     | 合并下载文件             |
 | hdfs dfs -du -h /user/hive/warehouse/edw.db/test             | 统计每个文件大小     |
@@ -69,37 +69,32 @@
 
 ### 1. HDFS写数据原理
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-1.jpg"/> </div>
+![image-20210302140425159](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140425159.png)
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-2.jpg"/> </div>
+![image-20210302140638840](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140638840.png)
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-write-3.jpg"/> </div>
+![image-20210302140707733](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140707733.png)
 
 
 ### 2. HDFS读数据原理
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-read-1.jpg"/> </div>
+![image-20210302140751738](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140751738.png)
 
 ### 3. HDFS故障类型和其检测方法
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-1.jpg"/> </div>
+![image-20210302140829008](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140829008.png)
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-2.jpg"/> </div>
-
-
+![image-20210302140854507](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140854507.png)
 
 **第二部分：读写故障的处理**
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-3.jpg"/> </div>
-
+![image-20210302140924798](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140924798.png)
 
 
 **第三部分：DataNode 故障处理**
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-4.jpg"/> </div>
-
-
+![image-20210302140949174](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140949174.png)
 
 **副本布局策略**：
 
-<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hdfs-tolerance-5.jpg"/> </div>
+![image-20210302141014819](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302141014819.png)
