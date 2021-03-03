@@ -72,7 +72,7 @@ set mapred.min.split.size.per.rack=256000000;
 set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;
 ```
 
-* 设置 reduce 
+* 设置 reduce
 ```sql
 -- 设置每个 reduce 处理的数据量 默认 64 M
 set hive.exec.reducers.bytes.per.reducer = 67108864 
