@@ -29,6 +29,7 @@
 ## 2、常用调优设置
 
 * 启用本地模式
+
 ```sql
 set hive.exec.mode.local.auto=true;
 set hive.exec.mode.local.auto.inputbytes.max=52428800;
@@ -39,11 +40,13 @@ set hive.exec.mode.local.auto.input.files.max=10;
 > none ：全部查询走 mapreduce
 > minimal（默认）： 一般的 limit 查询，不走 mapreduce
 > more ：一般的 limit 查询、where过滤等都不走 mapreduce
+
 ```sql
 set hive.fetch.task.conversion=more; 
 ```
 
 * 开启动态分区写入
+
 ```sql
 set hive.exec.dynamici.partition=true;
 set hive.exec.dynamic.partition.mode=nonstrict;
@@ -52,6 +55,7 @@ set hive.exec.max.dynamic.partitions.pernode=10000;
 ```
 
 * 使用spark引擎
+
 ```sql
 -- spark引擎参数
 -- 内存占用 cores * memory * instances 
@@ -63,6 +67,7 @@ set spark.executor.instances=8;
 ```
 
 * 设置 map
+
 ```sql
 -- hive 不能直接设置 map 数，只能通过设置块大小间接实现控制 map 数
 -- 合并输入端的小文件，减少map数
@@ -86,6 +91,7 @@ set mapred.reduce.tasks = 15;
 ```
 
 * 其它设置
+
 ```sql
 --Map 端部分聚合，相当于Combiner
 set hive.map.aggr = true;
@@ -211,12 +217,14 @@ TBLPROPERTIES('es.resource' = 'idx_f_gf_ent_penalty_info/f_gf_ent_penalty_info',
 ## 4、常用语句
 
 * 数据导入
+
 ```sql
 LOAD DATA LOCAL INPATH '/home/getway/tmp/way/data_test.txt'
 OVERWRITE INTO TABLE spider.test_way_20200818 ;
 ```
 
 * 数据导出
+
 ```sql
 INSERT OVERWRITE LOCAL DIRECTORY '/home/getway/tmp/way' 
 ROW FORMAT DELIMITED FIELDS TERMINATED by ',' 
@@ -224,17 +232,20 @@ select * from spider.test_way_20200818 ;
 ```
 
 * 创建临时表
+
 ```sql
 create temporary table as select id from tb;
 ```
 
 * 加字段
 > 分区表添加字段，需要使用 CASCADE
+
 ```sql
 alter table test20200415 add columns (name string, age string) CASCADE;
 ```
 
 * 删除外部表数据
+
 ```sql
 ALTER TABLE xxx SET TBLPROPERTIES('EXTERNAL'='False'); drop table xxx;
 ```
@@ -246,11 +257,13 @@ select regexp_replace(regexp_extract('asdas.doc','.docx|.xlsx|.xls|.pdf|.doc',0)
 ```
 
 * 截取
+
 ```sql
 SELECT split("6.5-8.5", '-')[0], split("6.5-8.5", '-')[1]
 ```
 
 * 侧视图（ 列转行）
+
 ```sql
 with tt as (
 select '0001/0002/0003' as file_id, '1' as key
@@ -262,6 +275,7 @@ lateral view explode(split(file_id,'/'))  b AS col5
 ```
 
 * 行合并
+
 ```sql
 with tt AS(
 select 'aaa' as a,'aaa' as b
@@ -272,6 +286,7 @@ from tt
 ```
 
 * json 解析函数 （get_json_object）
+
 ```sql
 with json_test as (
 select '{"message":"2015/12/08 09:14:4","server": "passport.suning.com","request": "POST /ids/needVerifyCode HTTP/1.1"}' as js
@@ -280,6 +295,7 @@ select get_json_object(js,'$.message'), get_json_object(js,'$.server') from json
 ```
 
 * json 解析函数 （json_tuple）
+
 ```sql
 with json_test as (
 select '{"message":"2015/12/08 09:14:4","server": "passport.suning.com","request": "POST /ids/needVerifyCode HTTP/1.1"}' as js
@@ -292,6 +308,7 @@ lateral view json_tuple(js,'message','server','request') a as f1,f2,f3;
 ## 5、元数据
 
 * hive元数据查看
+
 ```sql
 select * from(
 select a.TBL_NAME,
@@ -307,6 +324,7 @@ group by a.TBL_NAME
 ```
 
 * 分区表，元数据不一致处理，统一更新
+
 ```sql
 -- select  T1.TBL_NAME, T4.PART_NAME, T5.CD_ID, T3.CD_ID
 -- from TBLS T1,DBS T2,SDS T3,PARTITIONS T4, SDS T5
