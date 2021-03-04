@@ -37,9 +37,10 @@ set hive.exec.mode.local.auto.input.files.max=10;
 ```
 
 * fetch 模式
-> none ：全部查询走 mapreduce
-> minimal（默认）： 一般的 limit 查询，不走 mapreduce
-> more ：一般的 limit 查询、where过滤等都不走 mapreduce
+
+- - none ：全部查询走 mapreduce
+- - minimal（默认）： 一般的 limit 查询，不走 mapreduce
+- - more ：一般的 limit 查询、where过滤等都不走 mapreduce
 
 ```sql
 set hive.fetch.task.conversion=more; 
