@@ -15,6 +15,7 @@
   * [flink](doc/bigdata/flink.md)
   * [flume](doc/bigdata/flume.md)
   * [elasticsearch](doc/bigdata/elasticsearch.md)
+  * [zookeeper](doc/bigdata/zookeeper.md)
   * [python3 操作大数据](https://github.com/TurboWay/pybigdata)
 * [数据库](doc/数据库.md)
   * [mysql](doc/db/mysql.md)
