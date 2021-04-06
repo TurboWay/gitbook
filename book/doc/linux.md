@@ -180,11 +180,22 @@ tar  -v 显示过程
 
 # 16、常用 shell 脚本
 
-## 循环
+## 循环1
 
 ```shell 
-for page in `seq 1 22`; do
-     python execute_spider.py -j d_zhuanli_quanguo_job -p $page -n 6;
+for i in {1..10}; 
+do
+    echo ${i} 测试
+done
+```
+
+## 循环2
+
+```shell 
+list=(a b c)
+for i in ${list[*]}; 
+do
+    echo ${i} 测试
 done
 ```
 
