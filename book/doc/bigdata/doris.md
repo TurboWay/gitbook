@@ -106,8 +106,7 @@ DISTRIBUTED BY HASH(`id`) BUCKETS 4
 PROPERTIES (
 "replication_num" = "3",
 "in_memory" = "false",
-"storage_format" = "V2",
-"function_column.sequence_type" = "bigint"
+"storage_format" = "V2"
 );
 
 -- 补序列字段
