@@ -36,9 +36,9 @@ for i in  `yarn application  -list | awk '{print $1}' | grep application_`; do y
 
 ## YARN工作原理简述
 
-![image-20210303000338144](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303000338144.png)
+![image-20210303000338144](http://pic.turboway.top/blogimg/image-20210303000338144.png)
 
 ## YARN工作原理详述
 
 
-![image-20210303000446736](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303000446736.png)
+![image-20210303000446736](http://pic.turboway.top/blogimg/image-20210303000446736.png)

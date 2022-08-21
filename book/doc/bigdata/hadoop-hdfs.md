@@ -69,32 +69,32 @@
 
 ### 1. HDFS写数据原理
 
-![image-20210302140425159](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140425159.png)
+![image-20210302140425159](http://pic.turboway.top/blogimg/image-20210302140425159.png)
 
-![image-20210302140638840](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140638840.png)
+![image-20210302140638840](http://pic.turboway.top/blogimg/image-20210302140638840.png)
 
-![image-20210302140707733](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140707733.png)
+![image-20210302140707733](http://pic.turboway.top/blogimg/image-20210302140707733.png)
 
 
 ### 2. HDFS读数据原理
 
-![image-20210302140751738](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140751738.png)
+![image-20210302140751738](http://pic.turboway.top/blogimg/image-20210302140751738.png)
 
 ### 3. HDFS故障类型和其检测方法
 
-![image-20210302140829008](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140829008.png)
+![image-20210302140829008](http://pic.turboway.top/blogimg/image-20210302140829008.png)
 
-![image-20210302140854507](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140854507.png)
+![image-20210302140854507](http://pic.turboway.top/blogimg/image-20210302140854507.png)
 
 **第二部分：读写故障的处理**
 
-![image-20210302140924798](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140924798.png)
+![image-20210302140924798](http://pic.turboway.top/blogimg/image-20210302140924798.png)
 
 
 **第三部分：DataNode 故障处理**
 
-![image-20210302140949174](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302140949174.png)
+![image-20210302140949174](http://pic.turboway.top/blogimg/image-20210302140949174.png)
 
 **副本布局策略**：
 
-![image-20210302141014819](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302141014819.png)
+![image-20210302141014819](http://pic.turboway.top/blogimg/image-20210302141014819.png)

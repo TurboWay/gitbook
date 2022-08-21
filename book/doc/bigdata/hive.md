@@ -352,7 +352,7 @@ and T5.CD_ID <> T3.CD_ID
 
 ## 7、Hive 架构
 
-![image-20210304000730308](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210304000730308.png)
+![image-20210304000730308](http://pic.turboway.top/blogimg/image-20210304000730308.png)
 
 - - 解析器（SQL Parser） 
 
