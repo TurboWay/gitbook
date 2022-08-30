@@ -113,6 +113,38 @@ PROPERTIES (
 ALTER TABLE gds_btgoods ENABLE FEATURE "SEQUENCE_LOAD" WITH PROPERTIES ("function_column.sequence_type" = "bigint");
 ```
 
+## 动态分区
+```sql
+CREATE TABLE `fact_vip_settlement_day_hour_goods_ads_sum_realtime` (
+  `order_type_id` int(11) NOT NULL COMMENT "",
+  `dateid` int(11) NOT NULL COMMENT "",
+  `add_dateid` int(11) NULL COMMENT "",
+  `pay_dateid` int(11) NULL COMMENT "",
+  `goods_sn` varchar(240) NOT NULL COMMENT "",
+  `is_ht` bigint(20) NOT NULL COMMENT "",
+  `salesAmount` decimal(20, 6) NOT NULL COMMENT "",
+  `goods_number` int(11) NOT NULL COMMENT "",
+  `order_from` varchar(16) NOT NULL COMMENT "",
+  `vendor_code` varchar(64) NOT NULL COMMENT "",
+  `utc` int(11) NOT NULL COMMENT "",
+  `hour` int(11) NULL COMMENT ""
+) ENGINE=OLAP
+COMMENT "唯品会结算(货号+小时)(实时近30天)"
+PARTITION BY RANGE(dateid) ()
+DISTRIBUTED BY HASH(dateid)
+PROPERTIES
+(
+    "dynamic_partition.create_history_partition" = "true",
+    "dynamic_partition.history_partition_num" = "30",
+    "dynamic_partition.enable" = "true",
+    "dynamic_partition.time_unit" = "DAY",
+    "dynamic_partition.start" = "-30",
+    "dynamic_partition.end" = "1",
+    "dynamic_partition.prefix" = "p",
+    "dynamic_partition.buckets" = "8"
+)
+```
+
 
 #### 常用sql
 
