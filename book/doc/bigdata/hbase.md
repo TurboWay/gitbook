@@ -72,15 +72,15 @@ fix 命令的一些实践说明 https://www.cnblogs.com/quchunhui/p/9583746.html
 
 ## HBase 架构
 
-![image-20210303170441072](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303170441072.png)
+![image-20210303170441072](http://pic.turboway.top/blogimg/image-20210303170441072.png)
 
-![image-20210303170519302](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303170519302.png)
+![image-20210303170519302](http://pic.turboway.top/blogimg/image-20210303170519302.png)
 
 ## HBase 读流程
-![image-20210303170536576](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303170536576.png)
+![image-20210303170536576](http://pic.turboway.top/blogimg/image-20210303170536576.png)
 
 ## HBase 写流程
-![image-20210303170547327](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303170547327.png)
+![image-20210303170547327](http://pic.turboway.top/blogimg/image-20210303170547327.png)
 
 ## HBase 的 flush、compact 原理
-![image-20210303170559969](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303170559969.png)
+![image-20210303170559969](http://pic.turboway.top/blogimg/image-20210303170559969.png)

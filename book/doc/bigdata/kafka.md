@@ -37,7 +37,7 @@ kafka-console-consumer --bootstrap-server gfdatanode01:9092 --topic way
 
 ## KAFKA 集群架构
 
-![image-20210303105318080](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303105318080.png)
+![image-20210303105318080](http://pic.turboway.top/blogimg/image-20210303105318080.png)
 
 * topic ：主题。消息数据以 主题 存储。
 
@@ -48,7 +48,7 @@ kafka-console-consumer --bootstrap-server gfdatanode01:9092 --topic way
   
 ## KAFKA 存储机制
 
-![image-20210303105622604](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303105622604.png)
+![image-20210303105622604](http://pic.turboway.top/blogimg/image-20210303105622604.png)
 
 * Kafka 把 topic 中一个parition大文件分成多个小文件段，通过多个小文件段，就容易定期清除或删除已经消费完文件，减少磁盘占用。
 * 通过索引信息可以快速定位message
@@ -67,6 +67,6 @@ in-sync replica，就是跟leader partition保持同步的follower partition的�
 
 * HW&LEO原理
 
-![image-20210303112351414](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303112351414.png)
+![image-20210303112351414](http://pic.turboway.top/blogimg/image-20210303112351414.png)
 
-![image-20210303112424043](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210303112424043.png)
+![image-20210303112424043](http://pic.turboway.top/blogimg/image-20210303112424043.png)

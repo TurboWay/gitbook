@@ -1,11 +1,11 @@
 ## map-reduce 图解
 
-![image-20210302144302050](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302144302050.png)
+![image-20210302144302050](http://pic.turboway.top/blogimg/image-20210302144302050.png)
 
 
 ## map-reduce 详细图解 [](https://blog.csdn.net/bingduanlbd/article/details/51933914)
 
-![image-20210302144009473](https://gitee.com/TurboWay/blogimg/raw/master/img/image-20210302144009473.png)
+![image-20210302144009473](http://pic.turboway.top/blogimg/image-20210302144009473.png)
 
 
 >[MapReduce shuffle过程剖析及调优](https://blog.csdn.net/bingduanlbd/article/details/51933914)
