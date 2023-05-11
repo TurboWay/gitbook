@@ -164,6 +164,23 @@ show alter table column order by createtime desc
 alter table order_return_goods_history2021 modify comment '换货新单商品明细（2021归档）';
 ```
 
+#### 资源组
+
+```sql
+-- 限制用户资源组
+SET PROPERTY FOR 'ebi_acc' 'resource_tags.location' = 'acc';
+
+-- 查看用户属性
+SHOW PROPERTY FOR ebi_acc
+
+-- 修改表副本分布
+alter table dis_capital_account_occupied_fund MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:5");
+alter table dis_capital_account_occupied_fund MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:3, tag.location.acc:2");
+
+-- 查看分区情况
+show partitions from dis_capital_account_occupied_fund
+```
+
 ### 修改配置
 
 ```shell
