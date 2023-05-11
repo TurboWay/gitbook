@@ -1,5 +1,5 @@
 
-## [官方文档](https://doris.apache.org/zh-CN/docs/get-starting/)
+## [官方文档](https://doris.apache.org/zh-CN/docs/dev/summary/basic-summary/)
 
 ### 查看版本
 ```sql
