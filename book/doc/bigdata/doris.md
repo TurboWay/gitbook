@@ -42,10 +42,6 @@ select date_format(date_add(20220620, interval 6 day),'%Y%m%d');
 - 倒排索引   
 
   >  适用 is_ht  
-
-- 内存表  
-
-  > 适用维度表
   
 - 可对维度表设置更多的副本，提升 Join 的性能
   > ```sql
@@ -173,12 +169,27 @@ SET PROPERTY FOR 'ebi_acc' 'resource_tags.location' = 'acc';
 -- 查看用户属性
 SHOW PROPERTY FOR ebi_acc
 
--- 修改表副本分布
-alter table dis_capital_account_occupied_fund MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:5");
-alter table dis_capital_account_occupied_fund MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:3, tag.location.acc:2");
-
 -- 查看分区情况
 show partitions from dis_capital_account_occupied_fund
+
+-- 修改副本分布
+-- 改表属性(必需)
+alter table stm_retail_settle_detail_full set ("default.replication_allocation"="tag.location.default:5");
+alter table stm_retail_settle_detail_full set ("default.replication_allocation"="tag.location.default:3, tag.location.acc:2");
+
+-- 非分区表(按需)
+alter table stm_retail_settle_detail_full set ("replication_allocation"="tag.location.default:5");
+alter table stm_retail_settle_detail_full set ("replication_allocation"="tag.location.default:3, tag.location.acc:2");
+
+-- 分区表(按需)
+alter table stm_retail_settle_detail_full MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:5");
+alter table stm_retail_settle_detail_full MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:3, tag.location.acc:2");
+
+-- 动态分区表(按需)
+alter table stm_retail_settle_detail_full set ("dynamic_partition.replication_allocation"="tag.location.default:5");
+alter table stm_retail_settle_detail_full set ("dynamic_partition.replication_allocation"="tag.location.default:3, tag.location.acc:2");
+alter table stm_retail_settle_detail_full MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:5");
+alter table stm_retail_settle_detail_full MODIFY PARTITION (*) set ("replication_allocation"="tag.location.default:3, tag.location.acc:2");
 ```
 
 ### 修改配置
