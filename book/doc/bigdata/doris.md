@@ -158,6 +158,10 @@ set global enable_insert_strict=true
 show alter table column order by createtime desc
 -- 修改表注释
 alter table order_return_goods_history2021 modify comment '换货新单商品明细（2021归档）';
+-- 查看表的统计信息收集概况
+show table stats ebi.dim_date
+-- 查看列的各项统计数据
+show column stats ebi.dim_date
 ```
 
 #### 资源组
